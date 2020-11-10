@@ -27,4 +27,9 @@ class MyApplication : Application(), HasActivityInjector, HasFragmentInjector,
     override fun supportFragmentInjector(): AndroidInjector<androidx.fragment.app.Fragment> =
         dispatchingSupportFragmentInjector
 
+
+    override fun onCreate() {
+        super.onCreate()
+    }
+
 }
