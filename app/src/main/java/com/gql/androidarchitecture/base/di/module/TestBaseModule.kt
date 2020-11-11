@@ -18,6 +18,7 @@ class TestBaseModule {
 }
 
 //第二种写法，由于TestPresenterImp有无参构造函数，所以可以用@Binds
+@Module
 abstract class TestBaseModuleV2 {
     @Binds
     @Named(TestPresenterV2)
