@@ -17,7 +17,7 @@ abstract class AppBaseModule {
 
 
 @Module
-  class AppBaseModuleV2 constructor(application: MyApplication){
+class AppBaseModuleV2 constructor(application: MyApplication) {
 
 
 }
