@@ -3,6 +3,7 @@ package com.gql.androidarchitecture
 import android.app.Activity
 import android.app.Application
 import android.app.Fragment
+import com.gql.androidarchitecture.base.di.component.DaggerApplicationComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -29,7 +30,9 @@ class MyApplication : Application(), HasActivityInjector, HasFragmentInjector,
 
 
     override fun onCreate() {
+
         super.onCreate()
+        DaggerApplicationComponent.builder().application(this).build()
     }
 
 }
