@@ -1,11 +1,11 @@
 package com.gql.androidarchitecture.base.di.module
 
-import com.gql.androidarchitecture.MyApplication
 import com.gql.androidarchitecture.base.activity.BaseActivity
 import com.gql.androidarchitecture.base.di.ActivityScoped
+import com.gql.androidarchitecture.business.login.LoginActivity
+import com.gql.androidarchitecture.business.login.di.module.LoginModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import javax.inject.Singleton
 
 
 @Module
@@ -14,12 +14,11 @@ abstract class AppBaseModule {
 
     @ActivityScoped
     @ContributesAndroidInjector(modules = [DemoModule::class])
-    abstract fun contributeYourAndroidInjector(): BaseActivity
+    abstract fun contributeBaseActivityInjector(): BaseActivity
+
+
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = [LoginModule::class])
+    abstract fun contributeLoginActivityInjector(): LoginActivity
 }
 
-
-@Module
-class AppBaseModuleV2 constructor(application: MyApplication) {
-
-
-}

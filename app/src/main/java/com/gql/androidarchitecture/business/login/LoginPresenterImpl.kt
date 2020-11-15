@@ -1,6 +1,8 @@
 package com.gql.androidarchitecture.business.login
 
-class LoginPresenterImpl : LoginContract.Presenter {
+import javax.inject.Inject
+
+class LoginPresenterImpl @Inject constructor() : LoginContract.Presenter {
     override fun login() {
         TODO("Not yet implemented")
     }

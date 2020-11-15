@@ -13,6 +13,7 @@ const val DEMODATAV2_2 = "DEMODATAV2-2"
 const val DEMODATAV2_3 = "DEMODATAV2-3"
 const val DEMODATAV2_4 = "DEMODATAV2-4"
 
+//当在kt的object类上使用@Module注解，需要加上@JvmStatic
 @Module
 object DemoModule {
 
