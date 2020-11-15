@@ -16,7 +16,7 @@ const val DEMODATAV2_4 = "DEMODATAV2-4"
 object DemoModule {
 
 
-    @Singleton
+//    @Singleton
     @Provides
     @JvmStatic
     fun provideDemoData(): DemoData {
@@ -27,43 +27,41 @@ object DemoModule {
     @Provides
     @JvmStatic
     @Named(DEMODATAV2)
-    fun provideDemoDataV2(demoDataV2: DemoDataV2): DemoDataV2 = DemoDataV2()
+    fun provideDemoDataV2(): DemoDataV2 = DemoDataV2(DEMODATAV2)
 
     @Provides
     @JvmStatic
     @Named(DEMODATAV2_1)
-    fun provideDemoDataV21(demoDataV2: DemoDataV2): DemoDataV2 = DemoDataV2("V2-1")
+    fun provideDemoDataV21(): DemoDataV2 = DemoDataV2(DEMODATAV2_1)
 
     @Provides
     @JvmStatic
     @Named(DEMODATAV2_2)
-    fun provideDemoDataV22(demoDataV2: DemoDataV2): DemoDataV2 = DemoDataV2("V2-2")
+    fun provideDemoDataV22(): DemoDataV2 = DemoDataV2(DEMODATAV2_2)
 
     @Provides
     @JvmStatic
     @Named(DEMODATAV2_3)
-    fun provideDemoDataV23(demoDataV2: DemoDataV2): DemoDataV2 = DemoDataV2("V2-3")
+    fun provideDemoDataV23(): DemoDataV2 = DemoDataV2(DEMODATAV2_3)
 
 
     @Provides
     @JvmStatic
     @Named(DEMODATAV2_4)
-    fun provideDemoDataV24(demoDataV2: DemoDataV2): DemoDataV2 = DemoDataV2("V2-4")
+    fun provideDemoDataV24(): DemoDataV2 = DemoDataV2(DEMODATAV2_4)
 
 }
 
 
 class DemoData @Inject constructor(val arg: String) {
-
+    fun showString(): String {
+        return "DemoData(arg='$arg')"
+    }
 }
 
-class DemoDataV2 @Inject constructor() {
-    var arg = ""
-
-    @Inject
-    constructor(arg: String) : this() {
-
-        this.arg = arg
+class DemoDataV2 @Inject constructor(val arg: String) {
+    fun showString(): String {
+        return "DemoDataV2(arg='$arg')"
     }
 
 }

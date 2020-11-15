@@ -17,7 +17,6 @@ import javax.inject.Named
 class BaseActivity : AppCompatActivity() {
 
 
-
     @Inject
     lateinit var demoData: DemoData
 
@@ -25,28 +24,30 @@ class BaseActivity : AppCompatActivity() {
     @Inject
     lateinit var demoData1: DemoData
 
+
+    //when using dagger in Kotlin, just need to turn @Named into @field:Named
     @Inject
-    @Named(DEMODATAV2)
+    @field:Named(DEMODATAV2)
     lateinit var demoDataV2: DemoDataV2
 
 
     @Inject
-    @Named(DEMODATAV2_1)
+    @field:Named(DEMODATAV2_1)
     lateinit var demoDataV2_1: DemoDataV2
 
 
     @Inject
-    @Named(DEMODATAV2_2)
+    @field:Named(DEMODATAV2_2)
     lateinit var demoDataV2_2: DemoDataV2
 
 
     @Inject
-    @Named(DEMODATAV2_3)
+    @field:Named(DEMODATAV2_3)
     lateinit var demoDataV2_3: DemoDataV2
 
 
     @Inject
-    @Named(DEMODATAV2_4)
+    @field:Named(DEMODATAV2_4)
     lateinit var demoDataV2_4: DemoDataV2
 
 
@@ -65,13 +66,14 @@ class BaseActivity : AppCompatActivity() {
 
         str += demoData1.toString()
         str += "\n"
-        str += demoDataV2_1.toString()
+
+        str += demoDataV2_1.toString() + "-" + demoDataV2_1.showString()
         str += "\n"
-        str += demoDataV2_2.toString()
+        str += demoDataV2_2.toString() + "-" + demoDataV2_2.showString()
         str += "\n"
-        str += demoDataV2_3.toString()
+        str += demoDataV2_3.toString() + "-" + demoDataV2_3.showString()
         str += "\n"
-        str += demoDataV2_4.toString()
+        str += demoDataV2_4.toString() + "-" + demoDataV2_4.showString()
         str += "\n"
         str
     }
