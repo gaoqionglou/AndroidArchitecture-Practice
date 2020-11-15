@@ -1,5 +1,6 @@
 package com.gql.androidarchitecture.base.di.module
 
+import com.gql.androidarchitecture.base.di.ActivityScoped
 import dagger.Module
 import dagger.Provides
 import javax.inject.Inject
@@ -16,7 +17,7 @@ const val DEMODATAV2_4 = "DEMODATAV2-4"
 object DemoModule {
 
 
-//    @Singleton
+    @ActivityScoped //-->实现一个activity范围内的单例
     @Provides
     @JvmStatic
     fun provideDemoData(): DemoData {
