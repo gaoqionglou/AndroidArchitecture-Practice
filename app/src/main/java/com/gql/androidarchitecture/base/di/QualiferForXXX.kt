@@ -8,22 +8,4 @@ import javax.inject.Qualifier
 @Qualifier
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-annotation class QualiferForXXX
-
-
-@Qualifier
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-annotation class QualiferForA
-@Qualifier
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-annotation class QualiferForB
-@Qualifier
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-annotation class QualiferForC
-@Qualifier
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-annotation class QualiferForD
+annotation class QualifierForXXX
