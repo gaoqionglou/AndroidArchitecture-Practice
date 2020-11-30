@@ -1,0 +1,30 @@
+android {
+    flavorDimensions "default", "appChannel"
+
+    productFlavors {
+        mock {
+            dimension "default"
+            applicationIdSuffix = ".mock"
+        }
+        prod {
+            dimension "default"
+        }
+        huawei {
+            dimension "appChannel"
+            applicationIdSuffix = ".huawei"
+            buildConfigField "String", "APP_CHANNEL", "huawei"
+        }
+        xiaomi {
+            dimension "appChannel"
+            buildConfigField "String", "APP_CHANNEL", "xiaomi"
+        }
+    }
+    // Remove mockRelease as it's not needed.
+    android.variantFilter { variant ->
+        if (variant.buildType.name == 'release'
+                && variant.getFlavors().get(0).name == 'mock') {
+            variant.setIgnore(true)
+        }
+    }
+
+}
