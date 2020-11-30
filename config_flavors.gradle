@@ -1,5 +1,5 @@
 android {
-    flavorDimensions "default", "appChannel","region"
+    flavorDimensions "default", "appChannel", "region"
 
     productFlavors {
         mock {
@@ -12,19 +12,19 @@ android {
         huawei {
             dimension "appChannel"
             applicationIdSuffix = ".huawei"
-            buildConfigField "String", "APP_CHANNEL", "huawei"
+            buildConfigField "String", "APP_CHANNEL", "\"huawei\""
         }
         xiaomi {
             dimension "appChannel"
-            buildConfigField "String", "APP_CHANNEL", "xiaomi"
+            buildConfigField "String", "APP_CHANNEL", "\"xiaomi\""
         }
         UK {
             dimension "region"
-            buildConfigField "String", "APP_REGION", "United Kingdom"
+            buildConfigField "String", "APP_REGION", "\"United Kingdom\""
         }
         NZ {
             dimension "region"
-            buildConfigField "String", "APP_REGION", "New Zealand"
+            buildConfigField "String", "APP_REGION", "\"New Zealand\""
         }
     }
     // Remove mockRelease as it's not needed.
