@@ -1,8 +1,9 @@
 package com.gql.androidarchitecture.business.login.model.remote
 
 import com.gql.androidarchitecture.business.login.model.LoginData
+import javax.inject.Inject
 
-class LoginRepository : LoginBusiness {
+class LoginRepository @Inject constructor(): LoginBusiness {
 
 
     override fun login(loginData: LoginData) {
