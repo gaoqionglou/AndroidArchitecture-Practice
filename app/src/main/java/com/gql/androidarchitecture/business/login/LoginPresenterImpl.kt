@@ -1,28 +1,32 @@
 package com.gql.androidarchitecture.business.login
 
+import com.gql.androidarchitecture.business.login.model.LoginData
 import com.gql.androidarchitecture.business.login.model.remote.LoginRepository
 import javax.inject.Inject
 
-class LoginPresenterImpl @Inject constructor(var taskRepository: LoginRepository) : LoginContract.Presenter {
+class LoginPresenterImpl @Inject constructor(var loginRepository: LoginRepository) : LoginContract.Presenter {
+    var loginView: LoginContract.View? = null
 
-    @Inject
-    lateinit var loginRepository: LoginRepository
 
-    override fun login() {
-        TODO("Not yet implemented")
+    override fun login(data: LoginData) {
+
     }
 
     override fun logout() {
-        TODO("Not yet implemented")
+
     }
 
     override fun attachView(view: LoginContract.View) {
-        TODO("Not yet implemented")
+        loginView = view
     }
 
     override fun dropView() {
-        TODO("Not yet implemented")
+        this.loginView = null
     }
 
+
+    fun processLogin(data: LoginData) {
+        loginRepository.login(data)
+    }
 
 }
