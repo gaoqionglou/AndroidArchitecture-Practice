@@ -1,5 +1,7 @@
 package com.gql.androidarchitecture.base
 
+import io.reactivex.disposables.CompositeDisposable
+
 interface TestContract {
     interface TestView : BaseView<TestPresenter> {
         fun showTestView()
@@ -20,6 +22,7 @@ class TestView : TestContract.TestView {
 
 class TestPresenterImp : TestContract.TestPresenter {
     override fun doTest(): MutableList<Int> = mutableListOf(1, 2, 3)
+    override var compositeDisposable: CompositeDisposable?=null
 
 
     override fun attachView(view: TestContract.TestView) = Unit

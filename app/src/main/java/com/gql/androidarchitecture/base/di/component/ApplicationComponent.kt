@@ -2,15 +2,15 @@ package com.gql.androidarchitecture.base.di.component
 
 import com.gql.androidarchitecture.MyApplication
 import com.gql.androidarchitecture.base.di.module.AppBaseModule
+import com.gql.androidarchitecture.base.di.module.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
-
-
-@Component(modules = [AppBaseModule::class, AndroidSupportInjectionModule::class, AndroidInjectionModule::class])
+@Singleton
+@Component(modules = [NetworkModule::class,AppBaseModule::class, AndroidSupportInjectionModule::class, AndroidInjectionModule::class])
 interface ApplicationComponent {
     @Component.Builder
     interface Builder {

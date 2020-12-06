@@ -1,6 +1,6 @@
 package com.gql.androidarchitecture.base.di.module
 
-import com.gql.androidarchitecture.base.activity.BaseActivity
+import com.gql.androidarchitecture.base.activity.TestActivity
 import com.gql.androidarchitecture.base.di.ActivityScoped
 import com.gql.androidarchitecture.business.login.LoginActivity
 import com.gql.androidarchitecture.business.login.di.module.LoginModule
@@ -14,11 +14,11 @@ abstract class AppBaseModule {
 
     @ActivityScoped
     @ContributesAndroidInjector(modules = [DemoModule::class])
-    abstract fun contributeBaseActivityInjector(): BaseActivity
+    abstract fun contributeBaseActivityInjector(): TestActivity
 
 
     @ActivityScoped
-    @ContributesAndroidInjector(modules = [LoginModule::class])
+    @ContributesAndroidInjector(modules = [LoginModule::class,DemoModule::class])
     abstract fun contributeLoginActivityInjector(): LoginActivity
 }
 

@@ -38,6 +38,11 @@ buildscript {
         rulesVersion = '1.0.1'
         timberVersion = '4.7.1'
         truthVersion = '0.44'
+
+        retrofit2Version='2.9.0'
+        rxVersion='2.1.1'
+        okhttp3Version='4.7.2'
+
     }
 
     repositories {
