@@ -9,7 +9,7 @@ import dagger.android.ContributesAndroidInjector
 
 
 @Module
-abstract class AppBaseModule {
+abstract class ActivityBindModule {
 
 
     @ActivityScoped

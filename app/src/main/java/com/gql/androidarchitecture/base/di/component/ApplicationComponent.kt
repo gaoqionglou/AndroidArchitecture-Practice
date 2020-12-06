@@ -1,7 +1,7 @@
 package com.gql.androidarchitecture.base.di.component
 
 import com.gql.androidarchitecture.MyApplication
-import com.gql.androidarchitecture.base.di.module.AppBaseModule
+import com.gql.androidarchitecture.base.di.module.ActivityBindModule
 import com.gql.androidarchitecture.base.di.module.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
@@ -10,7 +10,7 @@ import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [NetworkModule::class,AppBaseModule::class, AndroidSupportInjectionModule::class, AndroidInjectionModule::class])
+@Component(modules = [NetworkModule::class,ActivityBindModule::class, AndroidSupportInjectionModule::class, AndroidInjectionModule::class])
 interface ApplicationComponent {
     @Component.Builder
     interface Builder {
