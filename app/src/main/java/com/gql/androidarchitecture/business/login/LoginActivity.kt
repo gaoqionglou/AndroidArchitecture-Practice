@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     lateinit var retrofit: Retrofit
 
     @Inject
-    lateinit var loginPresenter: LoginContract.Presenter
+    lateinit var loginPresenter: LoginPresenterImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)

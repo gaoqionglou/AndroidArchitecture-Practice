@@ -6,7 +6,7 @@ import com.gql.androidarchitecture.business.login.model.LoginData
 
 
 interface LoginContract {
-    interface View : BaseView<Presenter> {
+    interface View : BaseView {
         fun showLoginLoading()
         fun hideLoginLoading()
         fun loginSuccess()

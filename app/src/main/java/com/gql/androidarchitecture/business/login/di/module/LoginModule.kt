@@ -4,15 +4,17 @@ import com.gql.androidarchitecture.business.login.LoginContract
 import com.gql.androidarchitecture.business.login.LoginPresenterImpl
 import com.gql.androidarchitecture.business.login.model.remote.LoginBusiness
 import com.gql.androidarchitecture.business.login.model.remote.LoginRepository
+import com.gql.androidarchitecture.business.login.model.remote.apiservicce.LoginRetrofitApiService
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
 
 @Module
 object LoginModule {
     @Provides
     @JvmStatic
-    fun provideLoginBusinessRepository(): LoginBusiness {
-        return LoginRepository()
+    fun provideLoginBusinessRepository(loginRetrofitApiService: LoginRetrofitApiService): LoginBusiness {
+        return LoginRepository(loginRetrofitApiService)
     }
 
 
@@ -22,5 +24,10 @@ object LoginModule {
         return LoginPresenterImpl(taskRepository)
     }
 
+    @Provides
+    @JvmStatic
+    fun provideLoginRetrofitApiService(retrofit: Retrofit): LoginRetrofitApiService {
+        return retrofit.create(LoginRetrofitApiService::class.java)
+    }
 
 }
