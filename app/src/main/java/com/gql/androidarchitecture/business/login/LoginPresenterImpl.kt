@@ -20,7 +20,7 @@ class LoginPresenterImpl @Inject constructor(var loginRepository: LoginRepositor
     }
 
 
-    fun processLogin(data: LoginData) {
+    private fun processLogin(data: LoginData) {
         val observable = loginRepository.login(data).map { it.loginId }
         val disposable = observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

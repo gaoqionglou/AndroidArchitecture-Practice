@@ -35,3 +35,9 @@ class MyApplication : Application(), HasActivityInjector, HasFragmentInjector,
     }
 
 }
+
+
+sealed class Env
+object Cert : Env()
+object Mock : Env()
+object Production : Env()
