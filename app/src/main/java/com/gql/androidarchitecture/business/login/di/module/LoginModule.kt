@@ -1,5 +1,6 @@
 package com.gql.androidarchitecture.business.login.di.module
 
+import com.gql.androidarchitecture.base.di.QualifierLoginApi
 import com.gql.androidarchitecture.business.login.LoginContract
 import com.gql.androidarchitecture.business.login.LoginPresenterImpl
 import com.gql.androidarchitecture.business.login.model.remote.LoginBusiness
@@ -26,7 +27,7 @@ object LoginModule {
 
     @Provides
     @JvmStatic
-    fun provideLoginRetrofitApiService(retrofit: Retrofit): LoginRetrofitApiService {
+    fun provideLoginRetrofitApiService(@QualifierLoginApi retrofit: Retrofit): LoginRetrofitApiService {
         return retrofit.create(LoginRetrofitApiService::class.java)
     }
 

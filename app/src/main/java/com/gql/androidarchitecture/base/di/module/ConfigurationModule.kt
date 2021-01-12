@@ -1,4 +1,4 @@
-package com.gql.androidarchitecture.configuration.di
+package com.gql.androidarchitecture.base.di.module
 
 import com.gql.androidarchitecture.base.NetworkConfiguration
 import com.gql.androidarchitecture.business.login.configuration.LoginBusinessConfiguration

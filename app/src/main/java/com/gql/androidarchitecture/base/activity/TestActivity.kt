@@ -6,7 +6,6 @@ import com.gql.androidarchitecture.R
 import com.gql.androidarchitecture.base.di.module.*
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.layout.*
-import retrofit2.Retrofit
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -14,8 +13,6 @@ import javax.inject.Named
 class TestActivity : AppCompatActivity() {
 
 
-    @Inject
-    lateinit var retrofit: Retrofit
 
     @Inject
     lateinit var demoData: DemoData
@@ -61,7 +58,7 @@ class TestActivity : AppCompatActivity() {
 
     val text = {
         var str = ""
-        str += retrofit.toString()
+//        str += retrofit.toString()
         str += "\n"
 
         str += demoData1.toString()

@@ -2,8 +2,8 @@ package com.gql.androidarchitecture.base.di.component
 
 import com.gql.androidarchitecture.MyApplication
 import com.gql.androidarchitecture.base.di.module.ActivityBindModule
+import com.gql.androidarchitecture.base.di.module.ConfigurationModule
 import com.gql.androidarchitecture.base.di.module.NetworkModule
-import com.gql.androidarchitecture.configuration.di.ConfigurationModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

@@ -8,12 +8,12 @@ import com.gql.androidarchitecture.R
 import com.gql.androidarchitecture.base.activity.TestActivity
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_login.*
-import retrofit2.Retrofit
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
-    @Inject
-    lateinit var retrofit: Retrofit
+//    @Inject
+//    @QualifierLoginApi
+//    lateinit var retrofit: Retrofit
 
     @Inject
     lateinit var loginPresenter: LoginPresenterImpl
@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        login.text = retrofit.toString()
+//        login.text = retrofit.toString()
         login.setOnClickListener {
             startActivity(Intent(this, TestActivity::class.java))
         }

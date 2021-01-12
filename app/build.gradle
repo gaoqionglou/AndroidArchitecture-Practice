@@ -84,4 +84,6 @@ dependencies {
     //okhttp3
     implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
+
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }

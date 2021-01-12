@@ -8,5 +8,5 @@ import com.gql.androidarchitecture.business.login.configuration.LoginBusinessCon
 object AppConfigurationFactory {
     fun provideNetworkConfiguration(): NetworkConfiguration = NetworkConfiguration(Mock,"mock","mock")
 
-    fun provideLoginBusinessConfiguration(): LoginBusinessConfiguration = LoginBusinessConfiguration()
+    fun provideLoginBusinessConfiguration(): LoginBusinessConfiguration = LoginBusinessConfiguration("mock","mock")
 }
