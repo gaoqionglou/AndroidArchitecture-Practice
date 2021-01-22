@@ -1,6 +1,6 @@
 package com.gql.androidarchitecture.business.login.di.module
 
-import com.gql.androidarchitecture.base.di.QualifierLoginApi
+import com.gql.androidarchitecture.base.di.annotation.QualifierLoginApi
 import com.gql.androidarchitecture.business.login.LoginContract
 import com.gql.androidarchitecture.business.login.LoginPresenterImpl
 import com.gql.androidarchitecture.business.login.model.remote.LoginBusiness
