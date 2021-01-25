@@ -8,7 +8,7 @@ import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 
 
-class MockDataCreator(val fileName: String, val mediaType: MediaType? = "application/json".toMediaType()) {
+class MockDataCreator(private val fileName: String, private val mediaType: MediaType? = "application/json".toMediaType()) {
 
     fun getMockResponse(request: Request): Response {
         val fileString = readMockDataFile(fileName)
@@ -21,7 +21,7 @@ class MockDataCreator(val fileName: String, val mediaType: MediaType? = "applica
                 .build()
     }
 
-    fun readMockDataFile(resourceName: String): String {
+    private fun readMockDataFile(resourceName: String): String {
         val fileName = "mockdata/$resourceName"
         val classLoader = Thread.currentThread().contextClassLoader
         classLoader.getResourceAsStream(fileName).use { return it.reader().readText() }

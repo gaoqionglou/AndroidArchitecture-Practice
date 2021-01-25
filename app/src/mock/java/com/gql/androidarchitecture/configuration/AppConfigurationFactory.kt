@@ -6,7 +6,7 @@ import com.gql.androidarchitecture.business.login.configuration.LoginBusinessCon
 
 /** AppConfigurationFactory in mock version */
 object AppConfigurationFactory {
-    fun provideNetworkConfiguration(): NetworkConfiguration = NetworkConfiguration(Mock,"mock","mock")
+    fun provideNetworkConfiguration(): NetworkConfiguration = NetworkConfiguration(Mock,"https://","mock","80")
 
-    fun provideLoginBusinessConfiguration(): LoginBusinessConfiguration = LoginBusinessConfiguration("mock","mock")
+    fun provideLoginBusinessConfiguration(): LoginBusinessConfiguration = LoginBusinessConfiguration("https://","mock","80")
 }

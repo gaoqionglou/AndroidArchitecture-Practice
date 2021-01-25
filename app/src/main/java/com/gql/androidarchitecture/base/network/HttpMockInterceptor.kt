@@ -1,6 +1,9 @@
 package com.gql.androidarchitecture.base.network
 
+import android.util.Log
+import com.gql.androidarchitecture.BuildConfig
 import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 
@@ -35,4 +38,13 @@ class HttpMockInterceptor : Interceptor {
         }
 
     }
+}
+
+
+fun OkHttpClient.Builder.addMockInterceptor(): OkHttpClient.Builder {
+    if (NetworkConstant.MOCK == BuildConfig.FLAVOR_environment.toUpperCase()) {
+        Log.i("NetWork","MockInterceptor added")
+        this.addInterceptor(HttpMockInterceptor())
+    }
+    return this
 }

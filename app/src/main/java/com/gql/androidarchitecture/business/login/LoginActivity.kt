@@ -1,11 +1,10 @@
 package com.gql.androidarchitecture.business.login
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.gql.androidarchitecture.R
-import com.gql.androidarchitecture.base.activity.TestActivity
+import com.gql.androidarchitecture.business.login.model.LoginData
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
@@ -23,8 +22,8 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 //        login.text = retrofit.toString()
-        login.setOnClickListener {
-            startActivity(Intent(this, TestActivity::class.java))
+        btnLogin.setOnClickListener {
+            loginPresenter.login(LoginData("1","1"))
         }
     }
 
