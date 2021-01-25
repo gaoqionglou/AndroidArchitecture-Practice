@@ -17,6 +17,7 @@ class MockDataCreator(private val fileName: String, private val mediaType: Media
                 .addHeader("Content-Type", "application/json")
                 .body(fileString.toResponseBody(mediaType))
                 .request(request)
+                .message("mock message")
                 .protocol(Protocol.HTTP_2)
                 .build()
     }

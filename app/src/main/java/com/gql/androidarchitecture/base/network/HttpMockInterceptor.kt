@@ -25,13 +25,13 @@ class HttpMockInterceptor : Interceptor {
 
         fun mockResponse(): Map<String, (Request) -> Response> {
             return mapOf(
-                    "/user/login.do" to { request ->
+                    "login.do" to { request ->
                         MockDataCreator("login.json").getMockResponse(request)
                     },
-                    "/news/newsList.do" to { request ->
+                    "newsList.do" to { request ->
                         MockDataCreator("newsList.json").getMockResponse(request)
                     },
-                    "/news/newsDetail.do" to { request ->
+                    "newsDetail.do" to { request ->
                         MockDataCreator("newsDetail.json").getMockResponse(request)
                     }
             )

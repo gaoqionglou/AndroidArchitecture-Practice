@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-//        login.text = retrofit.toString()
+        loginPresenter.attachView(this)
         btnLogin.setOnClickListener {
             loginPresenter.login(LoginData("1","1"))
         }
