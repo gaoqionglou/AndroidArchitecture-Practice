@@ -1,7 +1,9 @@
 package com.gql.androidarchitecture.business.news.model
 
-data class NewsRequest(val token: String)
+import java.io.Serializable
 
-data class News(val newsId: String, val newsTitle: String, val newsDetailId: String)
+data class NewsRequest(val token: String): Serializable
 
-data class NewsDetail(val newsId: String, val newsTitle: String, val content: String)
+data class News(val newsId: String, val newsTitle: String, val newsDetailId: String): Serializable
+
+data class NewsDetail(val newsId: String, val newsTitle: String, val content: String): Serializable

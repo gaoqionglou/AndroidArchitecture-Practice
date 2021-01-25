@@ -1,13 +1,13 @@
 android {
-    flavorDimensions "default", "appChannel", "region"
+    flavorDimensions "environment", "appChannel", "region"
 
     productFlavors {
         mock {
-            dimension "default"
+            dimension "environment"
             applicationIdSuffix = ".mock"
         }
         prod {
-            dimension "default"
+            dimension "environment"
         }
         huawei {
             dimension "appChannel"
