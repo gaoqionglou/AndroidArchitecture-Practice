@@ -6,4 +6,6 @@ interface BasePresenter<T : BaseView> {
     val compositeDisposable: CompositeDisposable
     fun attachView(view: T)
     fun dropView()
+
+
 }
