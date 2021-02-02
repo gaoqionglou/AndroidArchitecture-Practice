@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidArchitecturePractice</string>
+    <string name="login">LOGIN</string>
+    <string name="loginBtn">Login</string>
+    <string name="input_your_password">input your password</string>
+    <string name="input_your_account">input your account</string>
 </resources>
