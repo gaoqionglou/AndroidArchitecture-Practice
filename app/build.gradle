@@ -18,10 +18,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    signingConfigs rootProject.ext.signConfigs
     buildTypes {
 
         debug {
+            signingConfig /*signingConfigs.dev*/null
             minifyEnabled false
             // Uses new built-in shrinker http://tools.android.com/tech-docs/new-build-system/built-in-shrinker
             useProguard false
@@ -29,12 +30,29 @@ android {
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //            testProguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        release {
+        debugProguard.initWith(buildTypes.debug)
+        debugProguard {
+            signingConfig signingConfigs.dev
+            matchingFallbacks = ['debug']
             minifyEnabled true
             useProguard true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            testProguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        releaseUnsigned.initWith(buildTypes.release)
+        releaseUnsigned {
+            matchingFallbacks = ['release']
+            signingConfig null
+        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -47,6 +65,15 @@ android {
     testOptions.unitTests.all {
         testLogging {
             events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+        }
+    }
+
+    sourceSets {
+        test {
+            resources.srcDirs = ['src/test/resources','src/mock/resources']
+        }
+        debug {
+
         }
     }
 }
