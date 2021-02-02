@@ -34,5 +34,8 @@ android {
             variant.setIgnore(true)
         }
     }
+    android.applicationVariants.all{
+        variant -> println(variant)
+    }
 
 }
