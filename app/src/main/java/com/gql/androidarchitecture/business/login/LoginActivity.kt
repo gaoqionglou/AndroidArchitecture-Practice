@@ -24,8 +24,22 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         loginPresenter.attachView(this)
+
         btnLogin.setOnClickListener {
-            loginPresenter.login(LoginData("1","1"))
+            val username = login.text.toString()
+            val password = password.text.toString()
+            when {
+                username.isEmpty() -> {
+                    Toast.makeText(this, "username cannot be empty", Toast.LENGTH_SHORT).show()
+                }
+                password.isEmpty() -> {
+                    Toast.makeText(this, "password cannot be empty", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    loginPresenter.login(LoginData(username, password))
+                }
+            }
+
         }
     }
 
