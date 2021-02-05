@@ -19,10 +19,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs rootProject.ext.signConfigs
+
+
     buildTypes {
 
         debug {
-            signingConfig /*signingConfigs.dev*/null
+            signingConfig /*signingConfigs.dev*/ null
             minifyEnabled false
             // Uses new built-in shrinker http://tools.android.com/tech-docs/new-build-system/built-in-shrinker
             useProguard false
@@ -68,13 +70,41 @@ android {
         }
     }
 
+    //configure sourceSets
     sourceSets {
-        test {
-            resources.srcDirs = ['src/test/resources','src/mock/resources']
-        }
-        debug {
 
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/extraBaseTest/java'
+        androidTest.java.srcDirs += 'src/extraBaseTest/java'
+
+        test {
+            resources.srcDirs = ['src/test/resources', 'src/mock/resources']
         }
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+        }
+
+        debugProguard {
+            manifest.srcFile 'src/debug/AndroidManifest.xml'
+            java.srcDirs = ['src/debug/java']
+            res.srcDirs = ['src/debug/res']
+            assets.srcDirs = ['src/debug/assets']
+        }
+
+        release {
+            manifest.srcFile 'src/release/AndroidManifest.xml'
+            java.srcDirs = ['src/release/java']
+            res.srcDirs = ['src/release/res']
+            assets.srcDirs = ['src/release/assets']
+        }
+
+        releaseUnsigned {
+            manifest.srcFile 'src/release/AndroidManifest.xml'
+            java.srcDirs = ['src/release/java']
+            res.srcDirs = ['src/release/res']
+            assets.srcDirs = ['src/release/assets']
+        }
+
     }
 }
 kapt {
